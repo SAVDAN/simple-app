@@ -4,20 +4,34 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-        //Создаем переменную типа Scanner
         Scanner myScanner = new Scanner(System.in);
 
-        //Создаем переменную в которую будем сохранять введенное нами значение
-        int myNumber;
+        int day;
+        int month;
+        int year;
 
-        //Просим ввести число
-        System.out.println("Введите пожалуйста число: ");
+        System.out.println("Здравствуйте, я могу посчитать сколько дней прошло с вашего дня рождения ");
+        // Тут хотелось бы чтобы просто Enter нажать и перешло дальше
+        // Но могу сделать да или нет :)
 
-        //Считываем введенное пользователем число и заносим его в переменную myNumber
-        myNumber = myScanner.nextInt();
+        System.out.println("Введите пожалуйста дату вашего дня рождения: ");
 
-        //Выведем число которое ввел пользователь
-        System.out.println("Ваше число: " + myNumber);
-        System.out.println(" Тест ");
+        System.out.println("День: ");
+
+        day = myScanner.nextInt();
+
+        System.out.println("Месяц: ");
+
+        month = myScanner.nextInt();
+
+        System.out.println("Год: ");
+
+        year = myScanner.nextInt();
+
+        System.out.println("Ваш день рождения  : " + day + "." + month + "." + year );
+        System.out.println("Дней прошло : " );
+        // Никак не пойму как написать, чтобы считались прошедшие дни от определённой даты, в гугл лесть не хочу
+        // А как посчитать через калькулятор ,хз
+
     }
 }

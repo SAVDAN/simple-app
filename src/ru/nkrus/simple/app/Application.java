@@ -18,5 +18,6 @@ public class Application {
 
         //Выведем число которое ввел пользователь
         System.out.println("Ваше число: " + myNumber);
+        System.out.println(" Тест ");
     }
 }

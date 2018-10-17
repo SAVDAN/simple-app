@@ -1,7 +1,22 @@
 package ru.nkrus.simple.app;
 
+import java.util.Scanner;
+
 public class Application {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        //Создаем переменную типа Scanner
+        Scanner myScanner = new Scanner(System.in);
+
+        //Создаем переменную в которую будем сохранять введенное нами значение
+        int myNumber;
+
+        //Просим ввести число
+        System.out.println("Введите пожалуйста число: ");
+
+        //Считываем введенное пользователем число и заносим его в переменную myNumber
+        myNumber = myScanner.nextInt();
+
+        //Выведем число которое ввел пользователь
+        System.out.println("Ваше число: " + myNumber);
     }
 }

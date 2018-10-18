@@ -1,6 +1,9 @@
 package ru.nkrus.simple.app;
 
+import java.text.ParseException;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
@@ -11,8 +14,6 @@ public class Application {
         int year;
 
         System.out.println("Здравствуйте, я могу посчитать сколько дней прошло с вашего дня рождения ");
-        // Тут хотелось бы чтобы просто Enter нажать и перешло дальше
-        // Но могу сделать да или нет :)
 
         System.out.println("Введите пожалуйста дату вашего дня рождения: ");
 
@@ -30,8 +31,33 @@ public class Application {
 
         System.out.println("Ваш день рождения  : " + day + "." + month + "." + year );
         System.out.println("Дней прошло : " );
-        // Никак не пойму как написать, чтобы считались прошедшие дни от определённой даты, в гугл лесть не хочу
-        // А как посчитать через калькулятор ,хз
+
+        //Теперь проблема в другом, полазия по форумам, я понял, что к чему.
+
+        String date1 = "18.10.2018";
+        String date2 = "23.4.1996"; // Тут хотел сделать , чтобы принимало значение day и т.д (но не работает)
+
+        SimpleDateFormat format = new  SimpleDateFormat("dd.MM.yyyy");
+
+        Date dateToday = null;
+        Date dateHB = null;
+
+        try {
+            dateToday = format.parse(date1);
+            dateHB = format.parse(date2);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long difference = dateToday.getTime() - dateHB.getTime();
+
+        int days =  (int)(difference / (24 * 60 * 60 * 1000));
+
+        System.out.println(days + " дн.");
+
+
+
 
     }
 }

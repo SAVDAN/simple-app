@@ -1,17 +1,18 @@
 package ru.nkrus.simple.app;
 
-import java.text.ParseException;
 import java.util.Scanner;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
 
-        int day;
-        int month;
-        int year;
+        int day1;
+        int month1;
+        int year1;
+
+        int day2;
+        int month2;
+        int year2;
 
         System.out.println("Здравствуйте, я могу посчитать сколько дней прошло с вашего дня рождения ");
 
@@ -19,42 +20,44 @@ public class Application {
 
         System.out.println("День: ");
 
-        day = myScanner.nextInt();
+        day1 = myScanner.nextInt();
 
         System.out.println("Месяц: ");
 
-        month = myScanner.nextInt();
+        month1 = myScanner.nextInt();
 
         System.out.println("Год: ");
 
-        year = myScanner.nextInt();
+        year1 = myScanner.nextInt();
 
-        System.out.println("Ваш день рождения  : " + day + "." + month + "." + year );
-        System.out.println("Дней прошло : " );
+        System.out.println("Введите пожалуйста текущую дату: ");
 
-        //Теперь проблема в другом, полазия по форумам, я понял, что к чему.
+        System.out.println("День: ");
 
-        String date1 = "18.10.2018";
-        String date2 = "23.4.1996"; // Тут хотел сделать , чтобы принимало значение day и т.д (но не работает)
+        day2 = myScanner.nextInt();
 
-        SimpleDateFormat format = new  SimpleDateFormat("dd.MM.yyyy");
+        System.out.println("Месяц: ");
 
-        Date dateToday = null;
-        Date dateHB = null;
+        month2 = myScanner.nextInt();
 
-        try {
-            dateToday = format.parse(date1);
-            dateHB = format.parse(date2);
+        System.out.println("Год: ");
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        year2 = myScanner.nextInt();
 
-        long difference = dateToday.getTime() - dateHB.getTime();
+        System.out.println("Ваш день рождения  : " + day1 + "." + month1 + "." + year1 );
+        System.out.println("Текущая дата  : " + day2 + "." + month2 + "." + year2 );
 
-        int days =  (int)(difference / (24 * 60 * 60 * 1000));
+        int total = (day1 * 24) * 60;
+        int total2 = (day2 * 24) * 60;
+        int delta = total2 - total;
+        int deltaDays = (delta / 60) / 24;
 
-        System.out.println(days + " дн.");
+
+
+        System.out.println(deltaDays);
+
+
+
 
 
 
